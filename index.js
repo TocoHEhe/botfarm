@@ -7,7 +7,7 @@ const PASSWORD = "123456";
 
 function createBot() {
   bot = mineflayer.createBot({
-    host: "103.69.96.34",
+    host: "hamstersmp.asia",
     port:  31423,
     username: "HeHeBoy",
     version: "1.21"
