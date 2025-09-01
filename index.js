@@ -10,7 +10,7 @@ function createBot() {
     host: "hamstersmp.asia",
     port:  31423,
     username: "HeHeBoy",
-    version: "1.21"
+    version: false,
   });
 
   // === Tự động login/register
