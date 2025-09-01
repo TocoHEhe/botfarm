@@ -5,7 +5,7 @@ function createBot() {
     host: "AETSON.aternos.me",
     port: 52126,
     username: "HeHeBoy",
-    version: false,
+    version: "1.21.8",
   });
 
   const PASSWORD = "123456";
