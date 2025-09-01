@@ -1,4 +1,4 @@
-const mineflayer = require("mineflayer");
+AETSON.aternos.me:52126const mineflayer = require("mineflayer");
 const readline = require("readline");
 const express = require("express");
 
@@ -7,7 +7,7 @@ const PASSWORD = "123456";
 
 function createBot() {
   bot = mineflayer.createBot({
-    host: "185.107.193.163",
+    host: "AETSON.aternos.me",
     port:  52126,
     username: "Bot by TOCO",
     version: false,
