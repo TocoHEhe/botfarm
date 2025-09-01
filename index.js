@@ -9,7 +9,7 @@ function createBot() {
   bot = mineflayer.createBot({
     host: "185.107.193.163",
     port:  52126,
-    username: "HeHeBoy",
+    username: "Bot by TOCO",
     version: false,
   });
 
