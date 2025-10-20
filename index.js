@@ -2,10 +2,10 @@ function createBot() {
   const mineflayer = require("mineflayer");
 
   const bot = mineflayer.createBot({
-    host: "AETSON.aternos.me",
-    port: 52126,
-    username: "HeHeBoy",
-    version: "1.21.8",
+    host: "mudminnow.aternos.host",
+    port: 29369,
+    username: "BotTOCO",
+    version: "1.21",
   });
 
   const PASSWORD = "123456";
