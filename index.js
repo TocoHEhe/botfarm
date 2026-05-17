@@ -1,39 +1,35 @@
+const mineflayer = require('mineflayer')
+
 function createBot() {
-  const mineflayer = require("mineflayer");
 
-  const bot = mineflayer.createBot({
-    host: "mudminnow.aternos.host",
-    port: 29369,
-    username: "BotTOCO",
-    version: "1.21",
-  });
+    const bot = mineflayer.createBot({
+        host: 'TOCOLATE.aternos.me',
+        port: 29024,
+        username: 'AFK_Bot'
+    })
 
-  const PASSWORD = "123456";
+    bot.on('spawn', () => {
+        console.log('Bot online')
 
-  bot.on("message", (jsonMsg) => {
-    const msg = jsonMsg.toString().toLowerCase();
-    if (msg.includes("/register") || msg.includes("đăng ký")) {
-      bot.chat(`/register ${PASSWORD} ${PASSWORD}`);
-      console.log("🔐 Đã gửi /register");
-    } else if (msg.includes("/login") || msg.includes("đăng nhập")) {
-      bot.chat(`/login ${PASSWORD}`);
-      console.log("🔐 Đã gửi /login");
-      setTimeout(() => bot.chat("/team home"), 2000); // Gửi lệnh team home sau khi login
-    }
-  });
+        setInterval(() => {
 
-  bot.once("spawn", () => {
-    console.log("✅ Bot đã vào server!");
-  });
+            bot.setControlState('jump', true)
 
-  bot.on("error", (err) => {
-    console.log(`❌ Lỗi: ${err.message}`);
-  });
+            setTimeout(() => {
+                bot.setControlState('jump', false)
+            }, 500)
 
-  bot.on("end", () => {
-    console.log("🔁 Mất kết nối! Thử lại sau 10 giây...");
-    setTimeout(createBot, 10000);
-  });
+        }, 30000)
+    })
+
+    bot.on('end', () => {
+        console.log('Reconnect...')
+        setTimeout(createBot, 5000)
+    })
+
+    bot.on('error', err => {
+        console.log(err)
+    })
 }
 
-createBot();
+createBot()
